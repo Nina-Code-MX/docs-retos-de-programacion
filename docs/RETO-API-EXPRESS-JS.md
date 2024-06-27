@@ -174,7 +174,7 @@ export const hola = async (req: Request, res: Response) => {
 };
 
 export const adios = async (req: Request, res: Response) => {
-  res.status(200).json({messages: `Vuelve pronto a mi api`});
+  res.status(301).json({messages: `Vuelve pronto a mi api`});
 };
 ```
 
@@ -185,7 +185,7 @@ export const adios = async (req: Request, res: Response) => {
 
   - La línea #1 Importara de la libreria express las herramientas de `Request` y `Response`, `Request` contendrá la información solicitada por el cliente, mientras que `Response` será la información que nosotros enviaremos al cliente.
   - La línea #3 a #5 creamos y exportando una función llamada `hola`, que respondera con un estatus `200` y un mensaja dando la bienvenido.
-  - La línea $7 a $9 creamos y exportando una función llamada `adios`, que respondera con un estatus `301` y un mensaja despidiendose.
+  - La línea #7 a #9 creamos y exportando una función llamada `adios`, que respondera con un estatus `301` y un mensaja despidiendose.
 
   -> Ver [Códigos de estado de respuesta HTTP](https://developer.mozilla.org/es/docs/Web/HTTP/Status) para más información.
   <p>&nbsp;</p>
@@ -279,19 +279,43 @@ Esti creara un servidor del app en localhost exponiendo el puerto elejido, ejemp
 
 ## 6. QA y Testing Manual
 
-Para probar que nuestra aplicación esta funcionando, abrimos la applicación de escritprop `POSTMAN` y creamos una nueva petición:
+Para probar que nuestra aplicación esta funcionando podemos hacerlo en la terminarl con `curl` o con la aplicación de escritorio `POSTMAN`:
 
-### 6.1. Validar la ruta `/hola`
+### 6.1. POSTMAN
+
+Abre la aplicación y create una nueva petición HTTP.
+
+#### 6.1.1. Validar la ruta `/hola`
 
 1. Tipo `GET`
 2. URL `http://localhost:3000/hola`
 
 Al enviar la petición, todo deberia funcionar, la aplicación se ejecutará y mostrará el mensaje: `Bienvenido a mi api` y con un estado de HTTP de 200.
 
-### 6.2. Validar la ruta `/adios`
+#### 6.1.2. Validar la ruta `/adios`
 
 1. Tipo `GET`
 2. URL `http://localhost:3000/adios`
+
+Al enviar la petición, todo deberia funcionar, la aplicación se ejecutará y mostrará el mensaje: `Vuelve pronto a mi api` y con un estado de HTTP de 301.
+
+### 6.2. Curl
+
+Abrimos una terminal, y sin importar el directorio ejecutaremos lo siguiente:
+
+#### 6.2.1. Validar la ruta `/hola`
+
+```bash
+curl -I http://localhost:3000/hola
+```
+
+Al enviar la petición, todo deberia funcionar, la aplicación se ejecutará y mostrará el mensaje: `Bienvenido a mi api` y con un estado de HTTP de 200.
+
+#### 6.2.2. Validar la ruta `/adios`
+
+```bash
+curl -I http://localhost:3000/adios
+```
 
 Al enviar la petición, todo deberia funcionar, la aplicación se ejecutará y mostrará el mensaje: `Vuelve pronto a mi api` y con un estado de HTTP de 301.
 
