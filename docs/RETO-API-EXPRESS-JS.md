@@ -130,7 +130,7 @@ npm install --global tsc
 #
 # Instalará las librerias principales en esta carpeta o proyecto
 #
-npm install express typescript
+npm install express
 #
 # Instalará herramientas de ayuda
 #
