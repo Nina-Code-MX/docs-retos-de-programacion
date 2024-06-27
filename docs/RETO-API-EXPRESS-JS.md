@@ -113,7 +113,7 @@ Se ejecutara automaticamente un "Wizard" o un asistente de instalación, donde t
 ```ini
 main:    "src/index.ts"
 author:  "<Tu Nombre|Correo|Sitio Web>"
-license: "GNU GPL 3.0"
+license: "GPL-3.0-or-later"
 ```
 
 Cualquier otro es a tu consideración.
@@ -130,7 +130,7 @@ npm install --global tsc
 #
 # Instalará las librerias principales en esta carpeta o proyecto
 #
-npm install express
+npm install express typescript
 #
 # Instalará herramientas de ayuda
 #
@@ -265,7 +265,7 @@ app.listen(PORT, () => {
 Si nuestro archivo `tsconfig.json` es correcto, podemos compilar nuestra aplicación ejecutando en una terminal en la carpeta de ROOT:
 
 ```bash
-tsc
+npx tsc
 ```
 
 El comando anterior, compilará la información y la empaquetara en la carpeta `/build`, ahora es necesario levantar el servidor, en la carpeta de ROOT:
